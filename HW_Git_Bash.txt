@@ -1,0 +1,46 @@
+HW 
+Linux terminal (GitBash) commands
+1)Посмотреть где я: pwd
+2) Создать папку : mkdir HW_Goup_23
+3) Зайти в папку : cd HW_Goup_23
+4) Создать 3 папки : mkdir folder {1..2}
+5) Зайти в любоую папку : cd folder1
+6) Создать 5 файлов (3 txt, 2 json) :  touch file{1..3}.txt {1..2}_file.json
+7) Создать 3 папки : mkdir folder{4..6}
+8) Вывести список содержимого папки : ls -la
+9) + Открыть любой txt файл : vim HW_Git_Bash.txt
+10) + написать туда что-нибудь, любой текст. : i
+11) + сохранить и выйти.: esc :wq
+12) Выйти из папки на уровень выше : cd ..
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.: mv file{1..2}.txt folder4
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.: cp file3.txt 1_file.json folder4
+15) Найти файл по имени : find ./ -type f -name "*file*.txt"
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.: tail -f folder HW_Git_Bash.txt | grep folder
+ 
+17) вывести несколько первых строк из текстового файла : head -10 HW_Git_Bash.txt
+18) вывести несколько последних строк из текстового файла : tail -9 HW_Git_Bash.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.: less HW_Git_Bash.txt
+20) вывести дату и время : date
+
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request (отправить запрос через терминал):  curl 'http://162.55.220.72:5005/get_method?name=Alina&age=24'
+2) Написать bash скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13 : 
+vi testscript.sh
+i
+#!/bin/sh
+cd /c/Users/user/Documents/HW_Goup_23
+mkdir folder{11..12}
+cd folder11
+touch file{11..13}.txt {11..12}_file.json
+mkdir folder{14..16}
+ls -la
+mv file{11..12}.txt folder14
+
+
+=====================
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir foldername
+3) Зайти в папку - cd foldername
