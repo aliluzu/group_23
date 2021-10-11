@@ -1,0 +1,14 @@
+1) Project
+2) Summary
+3) Description:
+-Steps
+-Expected result
+-Actual result
+4) Priority
+5) Severity
+6) Environment
+7) Attachments
+8) Link issue
+9) Assignee
+10) Reporter
+11) Status
