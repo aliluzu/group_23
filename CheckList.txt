@@ -1,6 +1,0 @@
-1)Build
-2)Environment
-3)ID
-4)To check
-5)Status
-6)Comment
