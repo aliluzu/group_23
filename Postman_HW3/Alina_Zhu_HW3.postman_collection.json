@@ -77,13 +77,13 @@
 									"let salary_12 = jsonData.qa_salary_after_12_months\r",
 									"let salary_1_5 = jsonData.person.u_salary_1_5_year\r",
 									"\r",
+									"pm.environment.set(\"salary_1_5_env\", jsonData.person.u_salary_1_5_year);\r",
 									"\r",
-									"\r",
-									"pm.collectionVariables.set(\"salary_1_5\", \"jsonData.person.u_salary_1_5_year\");\r",
-									"pm.sendRequest(\"http://postman-echo.com/get\", function (err, response) {\r",
-									"    console.log(response.json());\r",
-									"});\r",
-									"console.log(salary_1_5)\r",
+									"// pm.collectionVariables.set(\"salary_1_5\", \"jsonData.person.u_salary_1_5_year\");\r",
+									"// pm.sendRequest(\"http://postman-echo.com/get\", function (err, response) {\r",
+									"//     console.log(response.json());\r",
+									"// });\r",
+									"// console.log(salary_1_5)\r",
 									"\r",
 									"// Check formula\r",
 									"pm.test(\"Check_salary\", function () {\r",
@@ -464,7 +464,7 @@
 								},
 								{
 									"key": "salary",
-									"value": "{{salary_1_5}}",
+									"value": "{{salary_1_5_env}}",
 									"type": "text"
 								},
 								{
@@ -607,77 +607,6 @@
 							"raw": "{{url}}curr_byn",
 							"host": [
 								"{{url}}curr_byn"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "HM_3",
-			"item": [
-				{
-					"name": "#1_Task",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"\r",
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"\r",
-									"pm.test(\"Body matches string\", function () \r",
-									"{\r",
-									"    pm.expect(pm.response.text()).to.not.include(\"string_you_want_to_search\");\r",
-									"});\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://162.55.220.72:5005/first",
-							"protocol": "http",
-							"host": [
-								"162",
-								"55",
-								"220",
-								"72"
-							],
-							"port": "5005",
-							"path": [
-								"first"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "#2_Task",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://162.55.220.72:5005/user_info_3",
-							"protocol": "http",
-							"host": [
-								"162",
-								"55",
-								"220",
-								"72"
-							],
-							"port": "5005",
-							"path": [
-								"user_info_3"
 							]
 						}
 					},
