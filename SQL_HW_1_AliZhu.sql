@@ -1,7 +1,7 @@
 --1. Вывести все поля и все строки.
 select * from students;
  --2. Вывести всех студентов в таблице
-select students from students;
+select id from students;
 -- 3. Вывести только Id пользователей
 select id from students;
 -- 4. Вывести только имя пользователей
@@ -13,19 +13,19 @@ select name, email from students;
 -- 7. Вывести id, имя, email и дату создания пользователей
 select id, name, email, created_on from students;
 -- 8. Вывести пользователей где password 12333
-select students from students 
+select * from students 
 where password = '12333';
 -- 9. Вывести пользователей которые были созданы 2021-03-26 00:00:00
-select students from students
+select * from students
 where created_on = '2021-03-26 00:00:00';
 -- 10. Вывести пользователей где в имени есть слово Анна
-select students from students
-where name  = 'Анна';
+select * from students
+where name like '%Анна%';
 -- 11. Вывести пользователей где в имени в конце есть 8
-select students from students
+select * from students
 where name like '_%8';
 -- 12. Вывести пользователей где в имени в есть буква а
-select students from students
+select name from students
 where name like '%a%';
  --13. Вывести пользователей которые были созданы 2021-07-12 00:00:00
 select students from students
@@ -44,31 +44,31 @@ where created_on = '2021-07-12 00:00:00'
 and name like '%8%';
  --17. Вывести пользователя у которых id равен 10
 select students from students
-where id = '10';
+where id = 10;
  --18. Вывести пользователя у которых id равен 53
 select students from students
-where id = '53';
+where id = 53;
 -- 19. Вывести пользователя у которых id больше 40
 select id, name 
-from students where id>'40';
+from students where id>40;
 -- 20. Вывести пользователя у которых id меньше 30
 select id, name from students
-where id<'30';
+where id<30;
 -- 21. Вывести пользователя у которых id меньше 27 или больше 88
 select id, name from students
-where id<='37' or id>'88';
+where id<=37 or id>88;
 -- 22. Вывести пользователя у которых id меньше либо равно 37
 select id, name from students
-where id<='37';
+where id<=37;
 -- 23. Вывести пользователя у которых id больше либо равно 37
 select id, name from students
-where id>='37';
+where id>=37;
 -- 24. Вывести пользователя у которых id больше 80 но меньше 90
 select id, name from students
-where id>'80' and id<'90';
+where id>80 and id<90;
 -- 25. Вывести пользователя у которых id между 80 и 90
 select id, name from students
-where id between '80' and '90';
+where id between 80 and 90;
 -- 26. Вывести пользователей где password равен 12333, 1m313, 123313
 select id, name, password from students
 where password in('12333','1m313','123313');
@@ -80,7 +80,7 @@ select min(id) as min_id from students;
 -- 29. Вывести максимальный.
 select max(id) as max_id from students;
 -- 30. Вывести количество пользователей
-select count(students) from students;
+select count(name) from students;
 -- 31. Вывести id пользователя, имя, дату создания пользователя. Отсортировать по порядку возрастания даты добавления пользоватлеля.
 select id, name, created_on from students
 order by created_on;
