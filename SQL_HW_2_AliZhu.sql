@@ -48,8 +48,8 @@ insert into salary (id, monthly_salary)
 values (default, 2500);
 
 select * from salary
---
 
+--=========================================
 -- employee_salary table
 --
 --Create table employee_salary
@@ -70,6 +70,7 @@ values (default, 68, 4);
 
 select * from employee_salary 
 
+--=========================================
 --Table  roles
 --
 --Create table roles
@@ -92,6 +93,7 @@ values (default, 'Lead test Engineer')
 
 select * from roles
 
+--=========================================
 -- roles_employee table
 --
 --Create table roles_employee
