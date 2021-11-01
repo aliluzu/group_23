@@ -1,9 +1,9 @@
---Таблица employees
+--Table employees
 --
---Создать таблицу employees
+--Create table employees
 --- id. serial,  primary key,
 --- employee_name. Varchar(50), not null
---Наполнить таблицу employee 70 строками.
+--Populate the employee table with 70 rows.
 --
 --
 create table employees (
@@ -17,12 +17,12 @@ values (default, 'Alina Pobeditel');
 select * from employees;
 
 --=========================================
---Таблица salary
+--Salary table
 --
---Создать таблицу salary
+--Create table salary
 --- id. Serial  primary key,
 --- monthly_salary. Int, not null
---Наполнить таблицу salary 15 строками:
+--Populate the salary table 15 rows:
 --- 1000
 --- 1100
 --- 1200
@@ -48,16 +48,16 @@ insert into salary (id, monthly_salary)
 values (default, 2500);
 
 select * from salary
---
 
---Таблица employee_salary
+--=========================================
+-- employee_salary table
 --
---Создать таблицу employee_salary
+--Create table employee_salary
 --- id. Serial  primary key,
 --- employee_id. Int, not null, unique
 --- salary_id. Int, not null
---Наполнить таблицу employee_salary 40 строками:
---- в 10 строк из 40 вставить несуществующие employee_id
+--Populate the employee_salary table 40 rows:
+--- into 10 lines out of 40 insert non-existent  employee_id
 
 create table employee_salary(
 	id serial primary key,
@@ -70,13 +70,14 @@ values (default, 68, 4);
 
 select * from employee_salary 
 
---Таблица roles
+--=========================================
+--Table  roles
 --
---Создать таблицу roles
+--Create table roles
 --- id. Serial  primary key,
 --- role_name. int, not null, unique
---Поменять тип столба role_name с int на varchar(30)
---Наполнить таблицу roles 20 строками:
+--change the type of a column role_name into int на varchar(30)
+--Populate the roles table 20 rows:
 --
 create table roles (
 	id serial primary key,
@@ -92,14 +93,14 @@ values (default, 'Lead test Engineer')
 
 select * from roles
 
---Таблица roles_employee
+--=========================================
+-- roles_employee table
 --
---Создать таблицу roles_employee
+--Create table roles_employee
 --- id. Serial  primary key,
---- employee_id. Int, not null, unique (внешний ключ для таблицы employees, поле id)
---- role_id. Int, not null (внешний ключ для таблицы roles, поле id)
---Наполнить таблицу roles_employee 40 строками:
---
+--- employee_id. Int, not null, unique (foreign key for employees, field id)
+--- role_id. Int, not null (foreign key for table roles, field id)
+--Populate the roles_employee table 40 rows:
 create table roles_employee (
 id serial primary key,
 employee_ID int not null unique,
