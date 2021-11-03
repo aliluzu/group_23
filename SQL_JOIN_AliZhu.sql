@@ -251,7 +251,7 @@ select count(r.role_name) from roles_employee re
 where r.role_name like '%developer%';
 
 -- 28. Вывести фонд (сумму) зарплаты разработчиков.
-select e.employee_name, r.role_name, s.monthly_salary from salary s
+select SUM(s.monthly_salary) from salary s
 	inner join employee_salary es on s.id = es.salary_id 
 	inner join employees e on es.employee_id = e.id 
 	inner join roles_employee re on e.id = re.employee_id 
